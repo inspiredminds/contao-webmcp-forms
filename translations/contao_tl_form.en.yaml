@@ -1,0 +1,11 @@
+tl_form:
+  webmcp_legend: WebMCP
+  webmcp_toolname:
+    - toolname
+    - Clearly name the tool, based on its purpose.
+  webmcp_tooldescription:
+    - tooldescription
+    - Describe what action the tool takes and its purpose.
+  webmcp_toolautosubmit:
+    - toolautosubmit
+    - Adds <code>toolautosubmit</code> to trigger submission and a navigation when the model invokes this tool.

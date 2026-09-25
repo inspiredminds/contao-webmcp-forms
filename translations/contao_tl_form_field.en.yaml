@@ -1,0 +1,5 @@
+tl_form_field:
+  webmcp_legend: WebMCP
+  webmcp_toolparamdescription:
+    - toolparamdescription
+    - Map elements to a property description within the JSON Schema. Without this attribute, the browser uses the content within the associated <code>&lt;label&gt;</code> and skips descendants that are labelable. If there isn't a label, the browser refers to the <code>aria-description</code>.
