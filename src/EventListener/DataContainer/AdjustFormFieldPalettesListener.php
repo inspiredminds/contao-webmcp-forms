@@ -15,6 +15,10 @@ use Contao\DataContainer;
 #[AsCallback('tl_form_field', 'config.onload', priority: -100)]
 class AdjustFormFieldPalettesListener
 {
+    public function __construct(private readonly array $additionalTypes = ['select', 'radio', 'checkbox'])
+    {
+    }
+
     public function __invoke(DataContainer $dc): void
     {
         foreach ($GLOBALS['TL_DCA'][$dc->table]['palettes'] as $type => $palette) {
@@ -22,7 +26,7 @@ class AdjustFormFieldPalettesListener
                 continue;
             }
 
-            if (str_contains($palette, ',value') || 'select' === $type || 'radio' === $type) {
+            if (str_contains($palette, ',value') || \in_array($type, $this->additionalTypes, true)) {
                 PaletteManipulator::create()
                     ->addLegend('webmcp_legend', 'template_legend', PaletteManipulator::POSITION_BEFORE)
                     ->addField('webmcp_toolparamdescription', 'webmcp_legend', PaletteManipulator::POSITION_APPEND)

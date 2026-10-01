@@ -1,6 +1,0 @@
-{% extends "@Contao/form_row.html.twig" %}
-
-{% set wrapperAttributes = attrs()
-    .setIfExists('toolparamdescription', this.webmcp_toolparamdescription|default)
-    .mergeWith(wrapperAttributes|default)
-%}

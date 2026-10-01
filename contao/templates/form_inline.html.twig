@@ -1,0 +1,8 @@
+{% extends '@Contao/form_inline.html.twig' %}
+
+{% set attributes = attrs()
+    .setIfExists('toolname', webmcp_toolname)
+    .setIfExists('tooldescription', webmcp_tooldescription)
+    .set('toolautosubmit', '', webmcp_toolautosubmit)
+    .mergeWith(attributes|default)
+%}
